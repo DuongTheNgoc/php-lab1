@@ -67,22 +67,14 @@ or not -->
                     <label> Select an area</label>
                 </div>
                 <div class="lblinput">
-                    <select name="space">
-                        <option value="0" selected>--Select an area--</option>
-                        <option value="1" <?php echo $_POST['area'] == 1 ? "selected" : "" ?>>Area 1 </option>
-                        <option value="2" <?php echo $_POST['area'] == 2 ? "selected" : "" ?>>Area 2 </option>
-                        <option value="3" <?php echo $_POST['area'] == 3 ? "selected" : "" ?>>Area 3 </option>
-                        <option value="4" <?php echo $_POST['area'] == 4 ? "selected" : "" ?>>Area 4 </option>
-                        <option value="5" <?php echo $_POST['area'] == 5 ? "selected" : "" ?>>Area 5 </option>
-                        <!-- <option value="0" selected>--Select an area--</option>
-                        <option value="1" <?php echo $_POST['area'] == 1 ? "selected" : "" ?>>Area 1</option>
-                        <option value="2" <?php echo $_POST['area'] == 2 ? "selected" : "" ?>>Area 2</option>
-                        <option value="3" <?php echo $_POST['area'] == 3 ? "selected" : "" ?>>Area 3</option>
-                        <option value="4" <?php echo $_POST['area'] == 4 ? "selected" : "" ?>>Area 4</option>
-                        <option value="5" <?php echo $_POST['area'] == 5 ? "selected" : "" ?>>Area 5</option> -->
-
+                    <select name="area">
+                        <option value="" selected>-- Select an area --</option>
+                        <option value="1" <?php echo isset($_POST['area']) && $_POST['area'] == "1" ? 'selected' : ''; ?>>Area 1</option>
+                        <option value="2" <?php echo isset($_POST['area']) && $_POST['area'] == "2" ? 'selected' : ''; ?>>Area 2</option>
+                        <option value="3" <?php echo isset($_POST['area']) && $_POST['area'] == "3" ? 'selected' : ''; ?>>Area 3</option>
+                        <option value="4" <?php echo isset($_POST['area']) && $_POST['area'] == "4" ? 'selected' : ''; ?>>Area 4</option>
+                        <option value="5" <?php echo isset($_POST['area']) && $_POST['area'] == "5" ? 'selected' : ''; ?>>Area 5</option>
                     </select>
-
                 </div>
             </div>
             <!-- Form send button, command button to send results -->
@@ -139,8 +131,8 @@ Ratings" />
             </div>
             <div class="lbloutput">
                 <?php
-                if (isset($_POST['space'])) {
-                    $priority_points = $_POST['space'];
+                if (isset($_POST['area'])) {
+                    $priority_points = $_POST['area'];
                     switch ($priority_points) {
                         case 0:
                         case 4:
